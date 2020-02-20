@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIController">
+   <HBox prefHeight="400.0" prefWidth="600.0">
+      <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="400.0" prefWidth="300.0" spacing="8.0">
+         <HBox alignment="TOP_CENTER">
+            <Label text="Input" textAlignment="CENTER">
+               <padding>
+                  <Insets top="4.0" />
+               </padding>
+            </Label>
+         </HBox>
+         <HBox alignment="TOP_CENTER" spacing="8.0">
+            <RadioButton fx:id="OneClassButton" mnemonicParsing="false" onMouseClicked="#switchToOneSub" selected="true" text="One Class">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Classes" />
+               </toggleGroup>
+            </RadioButton>
+
+            <RadioButton fx:id="TwoClassButton" mnemonicParsing="false" onMouseClicked="#switchToTwoSub" text="Two Class" toggleGroup="$Classes" />
+         </HBox>
+         <HBox fx:id="StudentInfoInputContainer" prefHeight="60.0" prefWidth="200.0">
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+               <padding>
+                  <Insets right="4.0" />
+               </padding>
+               <Label text="Student ID">
+                  <padding>
+                     <Insets top="4.0" />
+                  </padding>
+               </Label>
+               <Label text="Full Name" />
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0">
+               <TextField fx:id="StudentIDInputField" />
+               <TextField fx:id="StudentNameInputField" />
+            </VBox>
+         </HBox>
+         <Label fx:id="AdvancedJavaInputLabel" text="Advanced Java" />
+         <HBox fx:id="AdvancedJavaInputContainer" prefHeight="100.0" prefWidth="200.0">
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+               <padding>
+                  <Insets right="4.0" top="4.0" />
+               </padding>
+               <Label text="Class Number" />
+               <Label text="Assignemnts Avg." />
+               <Label text="Exams Avg." />
+               <Label text="In-Class Avg." />
+            </VBox>
+            <VBox prefWidth="100.0" spacing="8.0">
+               <TextField fx:id="InputFieldAJ1" />
+               <TextField fx:id="InputFieldAJ2" />
+               <TextField fx:id="InputFieldAJ3" />
+               <TextField fx:id="InputFieldAJ4" />
+            </VBox>
+         </HBox>
+         <Label fx:id="WebTechnologyInputLabel" text="Web Technology" visible="false" />
+         <HBox fx:id="WebTechnologyInputContainer" prefHeight="100.0" prefWidth="200.0" visible="false">
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+               <padding>
+                  <Insets right="4.0" top="4.0" />
+               </padding>
+               <Label text="Class Number" />
+               <Label text="Assignemnts Avg." />
+               <Label text="Exams Avg." />
+               <Label text="In-Class Avg." />
+            </VBox>
+            <VBox prefWidth="100.0" spacing="8.0">
+               <TextField fx:id="InputFieldWT1" />
+               <TextField fx:id="InputFieldWT2" />
+               <TextField fx:id="InputFieldWT3" />
+               <TextField fx:id="InputFieldWT4" />
+            </VBox>
+         </HBox>
+         <HBox alignment="TOP_CENTER" spacing="8.0">
+            <padding>
+               <Insets top="4.0" />
+            </padding>
+            <Button fx:id="AddStudentButton" mnemonicParsing="false" onMouseClicked="#addStudent" text="Add Student" />
+         </HBox>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0" spacing="8.0">
+         <HBox alignment="TOP_CENTER">
+            <Label text="Output" textAlignment="CENTER">
+               <padding>
+                  <Insets top="4.0" />
+               </padding>
+            </Label>
+         </HBox>
+         <ListView fx:id="StudentListView" maxWidth="-Infinity" prefHeight="100.0" prefWidth="260.0" />
+         <HBox alignment="TOP_CENTER" prefWidth="200.0">
+            <VBox alignment="TOP_RIGHT" prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets right="4.0" top="8.0"/>
+               </padding>
+               <Label text="Student ID:"/>
+               <Label text="Full Name:"/>
+            </VBox>
+            <VBox prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets left="4.0" top="8.0"/>
+               </padding>
+               <Label fx:id="StudentIDOut"/>
+               <Label fx:id="StudentNameOut"/>
+            </VBox>
+         </HBox>
+         <Label text="Advanced Java" fx:id="AdvancedJavaOutputLabel"/>
+         <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="148.0" prefWidth="200.0" fx:id="AdvancedJavaOutputContainer">
+            <VBox alignment="TOP_RIGHT" prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets right="4.0"/>
+               </padding>
+               <Label text="Class Number:"/>
+               <Label text="Full Average:"/>
+               <Label layoutX="100.0" layoutY="44.0" text="Letter Score:"/>
+            </VBox>
+            <VBox prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets left="4.0"/>
+               </padding>
+               <Label fx:id="OutputFieldAJ1"/>
+               <Label fx:id="OutputFieldAJ2"/>
+               <Label layoutX="14.0" layoutY="44.0" fx:id="OutputFieldAJ3"/>
+            </VBox>
+         </HBox>
+         <Label text="Web Technology" fx:id="WebTechnologyOutputLabel"/>
+         <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="232.0" prefWidth="200.0" fx:id="WebTechnologyOutputContainer">
+            <VBox alignment="TOP_RIGHT" prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets right="4.0"/>
+               </padding>
+               <Label text="Class Number:"/>
+               <Label text="Full Average:"/>
+               <Label layoutX="100.0" layoutY="44.0" text="Letter Score:"/>
+            </VBox>
+            <VBox prefWidth="150.0" spacing="8.0">
+               <padding>
+                  <Insets left="4.0"/>
+               </padding>
+               <Label fx:id="OutputFieldWT1"/>
+               <Label fx:id="OutputFieldWT2"/>
+               <Label layoutX="14.0" layoutY="44.0" fx:id="OutputFieldWT3"/>
+            </VBox>
+         </HBox>
+      </VBox>
+      <padding>
+         <Insets top="8.0" />
+      </padding>
+   </HBox>
+</AnchorPane>
